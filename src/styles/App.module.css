@@ -1,0 +1,12 @@
+.container_cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+.notResult {
+    background-color: white;
+    text-align: center;
+    width: 100%;
+    text-align: center;
+}

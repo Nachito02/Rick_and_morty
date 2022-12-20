@@ -1,0 +1,39 @@
+.container {
+    margin: 0 auto;
+    width: 80%;
+    background-color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    padding: 1rem;
+    margin-top: 1.2rem;
+}
+
+.container button {
+    display: block;
+    width: 3rem;
+    
+}
+
+.container img {
+    
+    max-width: 100%;
+    border-bottom: 1px solid;
+}
+
+.nombre {
+    padding: .2rem .2rem;
+    position: absolute;
+    bottom: 4rem;
+    left:1.2rem;
+    background-color: rgba(0, 0, 0, .6);
+    
+    color: white;    
+    font-size: 1.2rem;
+}
+
+.info {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: .8rem;
+}

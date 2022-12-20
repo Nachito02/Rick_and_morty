@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'Mi Fuente';
+    src: url('../fonts/get_schwifty.ttf') format('truetype');
+  }
+
+.container {
+    background-color: #25275A;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+.logo h1 {
+    font-family: 'Mi Fuente';
+    color: #40B5CB;
+    font-size: 2.6rem;
+    text-shadow: 0 0 3px #C0DF40;
+}
+
+.nav button {
+    border: none;
+    outline: none;
+    background-color: #C0DF40;
+    padding: .5rem 1.2rem;
+    margin-left: 1rem;
+}
+
+.nav button:hover {
+    cursor: pointer;
+}
+
+.nav input {
+    border: 1px solid black;
+    
+    font-size: 1.2rem;
+    transition: border .3s ease;
+}
+
+.nav input:focus {
+    border:5px solid #40B5CB;
+    
+}
