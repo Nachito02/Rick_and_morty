@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    width: 100%;
+    align-items: center;
+    gap: 2rem;
+}
+
+
+.img {
+    width: 15rem;
+    border-radius: 20rem;
+    position: relative;
+    background: linear-gradient(to right, red, purple);
+    padding: 3px;
+}
+
+.me{
+    color: white;
+    
+}
+
+.me h1 span {
+    background: linear-gradient( cyan,yellow);
+    -webkit-background-clip: text;
+    color: transparent;  
+}

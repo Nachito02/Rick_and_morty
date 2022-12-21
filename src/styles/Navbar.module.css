@@ -14,8 +14,13 @@
 .logo h1 {
     font-family: 'Mi Fuente';
     color: #40B5CB;
-    font-size: 2.6rem;
+    font-size: 2rem;
     text-shadow: 0 0 3px #C0DF40;
+   
+}
+
+.logo a {
+    text-decoration: none;
 }
 
 .nav button {
@@ -32,7 +37,7 @@
 
 .nav input {
     border: 1px solid black;
-    
+    outline: none;
     font-size: 1.2rem;
     transition: border .3s ease;
 }
@@ -40,4 +45,15 @@
 .nav input:focus {
     border:5px solid #40B5CB;
     
+}
+
+
+.home {
+    color: white;
+    text-decoration: none;
+}
+
+.about {
+    color: white;
+    text-decoration: none;
 }
