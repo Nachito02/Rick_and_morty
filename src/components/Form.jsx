@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import styled from '../styles/Form.module.css'
 
 export function validate (inputs) { 
-  const regexEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
   
       let errors = {}
   
@@ -59,7 +58,7 @@ const Form = (props) => {
                 <h2>Login</h2>
                 <div className={styled.inputBox}>
                     <label htmlFor="">Username</label>
-                    <input type="text" value={userData.name} name='username' onChange={handleChange} />
+                    <input type="text" value={userData.name} name='username' placeholder='Username' onChange={handleChange} />
 
                         {errors.name && <p className={styled.error}>{errors.name}</p> }        
 
@@ -67,7 +66,7 @@ const Form = (props) => {
 
                 <div className={styled.inputBox}>
                     <label htmlFor="">Password</label>
-                    <input type="password" name='password' value={userData.password} onChange={handleChange} />
+                    <input type="password" name='password' placeholder='Password' value={userData.password} onChange={handleChange} />
                     {errors.password && <p className={styled.error}>{errors.password }</p> }       
                 </div>
 

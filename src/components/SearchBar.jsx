@@ -21,6 +21,8 @@ export default function SearchBar(props) {
           <button onClick={() => onSearch(buscador)}>Agregar</button> 
           </div>
           <Link className={styled.home} to="/home">Home</Link>
+          <Link className={styled.home} to="/favorites">Favorites</Link>
+
           <Link className={styled.about} to="/about">About me</Link>
 
       </div>

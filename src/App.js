@@ -4,14 +4,20 @@ import Cards from "./components/Cards.jsx";
 import SearchBar from "./components/SearchBar.jsx";
 import styled from "./styles/App.module.css";
 import Nav from "./components/Nav";
-import { Link, Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import {
+  Link,
+  Routes,
+  Route,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import Detail from "./components/Detail";
 import About from "./components/About";
 import Form from "./components/Form";
+import Favorites from "./components/Favorites";
 
 function App() {
-  const [access, setAccess] = useState(false);
-
+  const [access, setAccess] = useState(true);
 
   const [buscador, setBuscador] = useState("");
   const [characters, setCharacters] = useState([
@@ -45,16 +51,16 @@ function App() {
     },
   ]);
 
-  const username = "arguellojuan08@gmail.com";
-  const password = "1234"
+  const username = "admin";
+  const password = "admin";
   const navigate = useNavigate();
 
   function login(userData) {
     if (userData.password === password && userData.username === username) {
-       setAccess(true);
-       navigate('/home');
+      setAccess(true);
+      navigate("/home");
     }
- }
+  }
 
   // function filterItems(query, items) {
   //   return items.filter((item) => item.name.includes(query));
@@ -63,10 +69,15 @@ function App() {
   // const filteredItems = filterItems(buscador, characters);
 
   function onSearch(character) {
+    const dup = characters.some((char) => char.id == buscador);
+
+    if (dup) return window.alert("ya existe el personaje");
+
     fetch(`https://rickandmortyapi.com/api/character/${character}`)
       .then((response) => response.json())
       .then((data) => {
         if (data.name) {
+
           setCharacters((oldChars) => [...oldChars, data]);
           console.log(data);
         } else {
@@ -75,9 +86,11 @@ function App() {
       });
   }
 
+  console.log();
+
   useEffect(() => {
-    !access && navigate('/');
- }, [access]);
+    !access && navigate("/");
+  }, [access]);
 
   const onClose = (e) => {
     const updatedArray = characters.filter((obj) => obj.id != e.target.value);
@@ -87,29 +100,38 @@ function App() {
   const location = useLocation();
 
   return (
+
     <div className="App">
-      {location.pathname != '/' &&  <Nav buscador={buscador} onSearch={onSearch} setBuscador={setBuscador} /> }
-      <div className={location.pathname == "/home" ? styled.container_cards : null}>
+      {location.pathname != "/" && (
+        <Nav
+          buscador={buscador}
+          onSearch={onSearch}
+          setBuscador={setBuscador}
+        />
+      )}
+      <div
+        className={location.pathname == "/home" ? styled.container_cards : null}
+      >
         {/* {filteredItems.length > 0 ? (
           <Cards characters={filteredItems} />
         ) : (
           <p className={styled.notResult}>No se encontraron resultados</p>
         )} */}
         <Routes>
-          <Route
-            path="/"
-            element={<Form login = {login} />}
-          />
+          <Route path="/" element={<Form login={login} />} />
 
-<Route
+          <Route
             path="/home"
             element={<Cards onClose={onClose} characters={characters} />}
           />
           <Route path="/detail/:detailid" element={<Detail />} />
           <Route path="about" element={<About />} />
+          <Route path="/favorites" element={<Favorites characters={characters} />} />
+
         </Routes>
       </div>
     </div>
+
   );
 }
 

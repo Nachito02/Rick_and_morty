@@ -1,7 +1,12 @@
 .container {
- 
-
+background-image: url('../img/rickandmortybg.png');
+background-repeat: no-repeat;
+background-size: cover;
 color: white;
+height: 100vh;
+
+display: flex;
+align-items: center;
 }
 
 .container form {
@@ -10,7 +15,10 @@ color: white;
    background-color: #1E6D9D;
     height: 30rem;
     padding-top: 5rem;
-    margin-top: 1rem;
+
+    border-radius: 1rem;
+
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .inputBox {
@@ -26,21 +34,34 @@ color: white;
     border: none;
     background: white;
     outline: none;
-    padding: .5rem .1rem;
+    padding: .7rem .1rem;
     margin-top: .5rem;
     font-size: 1rem;
+    border-radius: .5rem;
+}
+.inputBox input::placeholder {
+    padding: .2rem;
 }
 
-
 .button {
+    display: block;
     margin-top: 1rem;
-    width: 7rem;
-    padding: .5rem 0;
+    width: 80%;
+    margin: 2rem auto 0;
+    padding: .8rem 1rem;
     background: #002953;
     border: none;
-    border-radius:1rem;
+    border-radius: .5rem;
     color: white;
     cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background .5s ease-in;
+}
+
+.button:hover {
+    background: #002346;
+
 }
 
 .error {
