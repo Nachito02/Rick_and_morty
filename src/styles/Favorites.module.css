@@ -2,3 +2,16 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
+
+.contenedorSelect p {
+    color: white;
+    font-weight: bold;
+}
+
+.select {
+    text-align: center;
+}
+
+.select p {
+    color: white;
+}

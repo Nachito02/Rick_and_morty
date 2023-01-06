@@ -18,6 +18,7 @@ import Favorites from "./components/Favorites";
 
 function App() {
   const [access, setAccess] = useState(true);
+  const [error, setError] = useState(false);
 
   const [buscador, setBuscador] = useState("");
   const [characters, setCharacters] = useState([
@@ -59,6 +60,8 @@ function App() {
     if (userData.password === password && userData.username === username) {
       setAccess(true);
       navigate("/home");
+    } else {
+      setError('Usuario o contraseña invalidos, prueba con: admin, admin')
     }
   }
 
@@ -101,7 +104,7 @@ function App() {
 
   return (
 
-    <div className="App">
+    <div className={styled.App}>
       {location.pathname != "/" && (
         <Nav
           buscador={buscador}
@@ -118,7 +121,8 @@ function App() {
           <p className={styled.notResult}>No se encontraron resultados</p>
         )} */}
         <Routes>
-          <Route path="/" element={<Form login={login} />} />
+
+          <Route path="/" element={<Form login={login} error={error} />} />
 
           <Route
             path="/home"

@@ -17,7 +17,7 @@ export function validate (inputs) {
 
 const Form = (props) => {
 
-    const {login} = props
+    const {login, error} = props
 
     const [userData, setUserData] =useState({ username: '', password: '' });
     const [errors, setErrors] = useState({
@@ -55,6 +55,7 @@ const Form = (props) => {
     <div className={styled.container}>
 
             <form >
+                {error && ( <p className={styled.error}>{error}</p> ) }
                 <h2>Login</h2>
                 <div className={styled.inputBox}>
                     <label htmlFor="">Username</label>

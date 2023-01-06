@@ -53,6 +53,6 @@
 
 .contenedor_butt {
     display: flex;
-   justify-content: end;
+   justify-content: space-between;
 }
 

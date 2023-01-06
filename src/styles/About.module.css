@@ -1,12 +1,16 @@
 .container {
     display: flex;
     justify-content: center;
-    margin-top: 5rem;
-    width: 100%;
+    flex-direction: column;
+    margin-top: 2rem;
     align-items: center;
     gap: 2rem;
 }
 
+.photo {
+    display: flex;
+    gap: 2rem;
+}
 
 .img {
     width: 15rem;
@@ -25,4 +29,57 @@
     background: linear-gradient( cyan,yellow);
     -webkit-background-clip: text;
     color: transparent;  
+}
+
+.text {
+  max-width: 800px;
+  margin: 0 auto;
+    background-color: white;
+    padding: 1rem;
+    border-radius: .5rem;
+    font-size: 1rem;
+    line-height: 2;
+    text-align: center;
+}
+
+.singleIcon {display: flex;
+    align-items: center;
+    gap:1rem;
+    text-decoration: none;
+
+}
+
+.singleIcon p {
+    margin: 0;
+    font-size: 1.3rem;
+    transition: all .5s ease;
+
+}
+
+.iconContainer {
+    display:flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.singleIcon.git {
+  
+    color: white;
+    font-size: 2.5rem;
+
+}
+
+.singleIcon.linkedin {
+    color: #0077B7;
+    font-size: 2.5rem;
+}
+
+.iconContainer p {
+    color: white;
+    font-weight: bold;
+
+}
+
+.singleIcon p:hover {
+    color: red;
 }

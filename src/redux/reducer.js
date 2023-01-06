@@ -1,33 +1,52 @@
-import { ADD_CHARACTER, DELETE_CHARACTER } from "./types";
-
+import { ADD_CHARACTER, DELETE_CHARACTER, FILTER, ORDER } from "./types";
 
 const initialState = {
-    myFavorites : []
-}
+  myFavorites: [],
+  allCharacters: [],
+};
 
+const rootReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case ADD_CHARACTER:
+      return {
+        ...state,
+        allCharacters: [...state.allCharacters, action.payload],
+      };
 
-const rootReducer = (state= initialState, action)  => {
+    case DELETE_CHARACTER:
+      return {
+        ...state,
+        allCharacters: state.allCharacters.filter((character) => {
+          return character.id != action.payload.id;
+        }),
+      };
 
-        switch(action.type) {
-            case ADD_CHARACTER:
-                return {
-                    ...state, myFavorites: [...state.myFavorites, action.payload]
-                }
+    case FILTER:
+      return {
+        ...state,
+        myFavorites: state.allCharacters.filter((pj) => {
+          return pj.gender === action.payload;
+        }),
+      };
 
-            case DELETE_CHARACTER:
-                return {
-                    ...state,
-                     myFavorites:state.myFavorites.filter(character   => {
-                        return character.id != action.payload.id
-                    })
-                }
+    case ORDER:
+      if (action.payload === "desc") {
+        return {
+          ...state,
+          allCharacters: state.allCharacters.sort((a, b) => b.id - a.id),
+        };
+      } else {
+        return {
+            ...state,
+            allCharacters: state.allCharacters.sort((a, b) => a.id - b.id),
+          };
+      }
 
-                default: return {
-                    ...state
-                }
-        }
-
-}
-
+    default:
+      return {
+        ...state,
+      };
+  }
+};
 
 export default rootReducer;
