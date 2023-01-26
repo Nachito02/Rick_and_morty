@@ -1,7 +1,10 @@
 .container {
     margin: 0 auto;
     width: 70%;
-    background-color: white;
+    background-color: #fbf6fb;
+    background-image: linear-gradient(0deg, #fbf6fb 0%, #97D9E1 100%);
+    
+    
     position: relative;
     display: flex;
     flex-direction: column; 
@@ -39,7 +42,6 @@
 
 .button {
     background: red;
-    border-radius: 2rem;
     padding: .4rem 0;
     font-size: .9rem;
     align-items: end;
@@ -53,5 +55,6 @@
 .contenedor_butt {
     display: flex;
    justify-content: space-between;
+   margin-bottom: 1rem;
 }
 

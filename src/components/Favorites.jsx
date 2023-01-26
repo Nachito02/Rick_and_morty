@@ -4,7 +4,7 @@ import Card from "./Card";
 import styles from "../styles/Favorites.module.css";
 import { filterCards, orderCards } from "../redux/actions";
 import { Select, MenuItem, FormControl, InputLabel } from "@mui/material";
-
+import { faX } from "@fortawesome/free-solid-svg-icons";
 
 export function Favorites({ allCharacters, characters }) {
   const options = ["Male", "Female", "unknown", "Genderless"];

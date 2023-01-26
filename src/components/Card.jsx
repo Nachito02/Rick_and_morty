@@ -3,6 +3,9 @@ import { connect } from "react-redux";
 import React, { useState, useEffect } from "react";
 import styled from "../styles/Card.module.css";
 import { useLocation } from "react-router-dom";
+import { faX } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 export function Card({
   agregar,
   eliminar,
@@ -62,7 +65,8 @@ export function Card({
           </button>
         )}
          {location.pathname === '/characters' ? (<button onClick={onClose} value={id} className={styled.button}>
-          X
+          <FontAwesomeIcon icon= {faX}  />
+
         </button>) : null }
       </div>
       <img src={image} alt="" />
