@@ -61,7 +61,7 @@ export function Card({
             🤍
           </button>
         )}
-         {location.pathname === '/home' ? (<button onClick={onClose} value={id} className={styled.button}>
+         {location.pathname === '/characters' ? (<button onClick={onClose} value={id} className={styled.button}>
           X
         </button>) : null }
       </div>

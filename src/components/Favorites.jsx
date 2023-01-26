@@ -3,6 +3,9 @@ import { connect, useDispatch, useSelector } from "react-redux";
 import Card from "./Card";
 import styles from "../styles/Favorites.module.css";
 import { filterCards, orderCards } from "../redux/actions";
+import { Select, MenuItem, FormControl, InputLabel } from "@mui/material";
+
+
 export function Favorites({ allCharacters, characters }) {
   const options = ["Male", "Female", "unknown", "Genderless"];
   const [all, setAll] = useState(true);
@@ -39,19 +42,29 @@ export function Favorites({ allCharacters, characters }) {
         <p>Ordenar y filtrar Personajes</p>
 
         <div className={styles.select}>
-          <select onChange={handleOrderchange} name="" id="">
-            <option value="asc">Asendente</option>
-            <option value="desc">desendente</option>
-          </select>
 
-          <select onChange={handleChange} name="" id="">
-            <option value="mostrar">Mostrar todos</option>
+        <FormControl className={styles.form} sx={{ m: 1, minWidth: 150 }}>
+            <InputLabel >Ordenar</InputLabel>
+          <Select onChange={handleOrderchange} name="" id="">
+          <MenuItem  value="asc">Asendente</MenuItem >
+          <MenuItem  value="desc">desendente</MenuItem >
+        </Select>
+          
+        </FormControl>
+
+        <FormControl className={styles.form} sx={{ m: 1, minWidth: 150 }}>
+        <InputLabel >Filtrar por</InputLabel>
+
+          <Select onChange={handleChange} name="" id="">
+            <MenuItem  value="mostrar">Mostrar todos</MenuItem >
             {options.map((e, i) => (
-              <option key={i} value={e}>
+              <MenuItem  key={i} value={e}>
                 {e}
-              </option>
+              </MenuItem >
             ))}
-          </select>
+          </Select>
+        </FormControl>
+
         </div>
       </div>
       <div className={styles.favorites}>

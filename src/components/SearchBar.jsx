@@ -8,23 +8,24 @@ export default function SearchBar(props) {
 
   const {setBuscador, buscador, onSearch} = props
 
-
    return (
       <div className={styled.container}>
       
+         <Link to="/home">
          <div className={styled.logo}>
-           <Link to='/home'> <h1>Rick and Morty App</h1></Link>
-         </div>
+            <img src="./static/img/logo_2.webp" alt="" />
+         </div></Link>
           
           <div className={styled.nav}>
-          <input type='search' onChange={(e) => setBuscador(e.target.value) }  />
-          <button onClick={() => onSearch(buscador)}>Agregar</button> 
-          </div>
+        
+        
           <Link className={styled.home} to="/home">Home</Link>
+          <Link className={styled.home} to="/characters">Personajes</Link>
+
           <Link className={styled.home} to="/favorites">Favorites</Link>
 
           <Link className={styled.about} to="/about">About me</Link>
-
+          </div>
       </div>
    );
 }

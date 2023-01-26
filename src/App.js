@@ -15,6 +15,8 @@ import Detail from "./components/Detail";
 import About from "./components/About";
 import Form from "./components/Form";
 import Favorites from "./components/Favorites";
+import Home from "./components/Home";
+import Characters from "./components/Characters";
 
 function App() {
   const [access, setAccess] = useState(true);
@@ -29,20 +31,7 @@ function App() {
       gender: "Male",
       image: "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
     },
-    {
-      id: 3,
-      name: "Summer Smith",
-      species: "Human",
-      gender: "Female",
-      image: "https://rickandmortyapi.com/api/character/avatar/3.jpeg",
-    },
-    {
-      id: 4,
-      name: "Beth Smith",
-      species: "Human",
-      gender: "Female",
-      image: "https://rickandmortyapi.com/api/character/avatar/4.jpeg",
-    },
+    
     {
       id: 1,
       name: "Rick Sanchez",
@@ -89,8 +78,6 @@ function App() {
       });
   }
 
-  console.log();
-
   useEffect(() => {
     !access && navigate("/");
   }, [access]);
@@ -112,29 +99,26 @@ function App() {
           setBuscador={setBuscador}
         />
       )}
-      <div
-        className={location.pathname == "/home" ? styled.container_cards : null}
-      >
+     
         {/* {filteredItems.length > 0 ? (
           <Cards characters={filteredItems} />
         ) : (
           <p className={styled.notResult}>No se encontraron resultados</p>
         )} */}
         <Routes>
-
           <Route path="/" element={<Form login={login} error={error} />} />
-
           <Route
             path="/home"
-            element={<Cards onClose={onClose} characters={characters} />}
+            element={<Home onClose={onClose} characters={characters} />}
           />
           <Route path="/detail/:detailid" element={<Detail />} />
           <Route path="about" element={<About />} />
           <Route path="/favorites" element={<Favorites characters={characters} />} />
+          <Route path="/characters" element={<Characters characters={characters} onClose={onClose} setBuscador={setBuscador} onSearch={onSearch} buscador={buscador} />} />
 
         </Routes>
       </div>
-    </div>
+
 
   );
 }

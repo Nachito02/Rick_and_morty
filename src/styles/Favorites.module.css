@@ -4,14 +4,17 @@
 }
 
 .contenedorSelect p {
-    color: white;
+    color: black;
+    font-size: 1.2rem;
     font-weight: bold;
 }
 
-.select {
-    text-align: center;
+.form {
+    background-color: #00B1CA;
 }
 
-.select p {
-    color: white;
+.select {
+    display: flex;
+    justify-content: center;
 }
+

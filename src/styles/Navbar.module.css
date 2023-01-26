@@ -4,19 +4,20 @@
   }
 
 .container {
-    background-color: #25275A;
+    background-color: transparent;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    padding: 0rem 5rem;
 }
 
+.container a {
+    color: black;
+    font-weight: bold;
+}
 
-.logo h1 {
-    font-family: 'Mi Fuente';
-    color: #40B5CB;
-    font-size: 2rem;
-    text-shadow: 0 0 3px #C0DF40;
-   
+.logo img  {
+    width:15rem;
 }
 
 .logo a {
@@ -31,21 +32,13 @@
     margin-left: 1rem;
 }
 
-.nav button:hover {
-    cursor: pointer;
+.nav {
+    display: flex;
+    gap: 3rem;
 }
 
-.nav input {
-    border: 1px solid black;
-    outline: none;
-    font-size: 1.2rem;
-    transition: border .3s ease;
-}
 
-.nav input:focus {
-    border:5px solid #40B5CB;
-    
-}
+
 
 
 .home {

@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    flex: 60%;
+    border-radius: 2rem;
+    padding: 1rem;
+}
+
+.header h1 {
+    font-size:3rem;
+    font-weight: bold;
+}
+
+.header h3{
+    font-size: 1.8rem;
+    color: black; 
+    font-weight: bolder;
+}
+
+
+.imagen img {
+    width: 30rem;
+}
+
